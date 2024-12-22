@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:naming_series",
+ "creation": "2024-12-18 15:42:48.076854",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_gmgn",
+  "naming_series",
+  "investor",
+  "investor_name",
+  "amended_from",
+  "column_break_nndx",
+  "date",
+  "company",
+  "paid_amount",
+  "accounts_tab",
+  "from_account",
+  "cost_center",
+  "column_break_uwws",
+  "to_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_gmgn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Investor Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "investor",
+   "fieldtype": "Link",
+   "label": "Investor",
+   "options": "Investor"
+  },
+  {
+   "fetch_from": "investor.title",
+   "fieldname": "investor_name",
+   "fieldtype": "Data",
+   "label": "Investor Name",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "IN-.MM.-.YYYY.-"
+  },
+  {
+   "fieldname": "column_break_nndx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Received Amount",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "accounts_tab",
+   "fieldtype": "Section Break",
+   "label": "Accounts"
+  },
+  {
+   "fieldname": "from_account",
+   "fieldtype": "Link",
+   "label": "From Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_uwws",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to_account",
+   "fieldtype": "Link",
+   "label": "To Account ",
+   "options": "Account"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-12-18 16:20:34.105446",
+ "modified_by": "Administrator",
+ "module": "Ksa Loan Management",
+ "name": "Investor Payment",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

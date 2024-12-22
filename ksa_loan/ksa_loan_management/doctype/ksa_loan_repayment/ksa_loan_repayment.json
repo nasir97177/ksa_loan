@@ -1,0 +1,294 @@
+{
+ "actions": [],
+ "autoname": "REP-.####",
+ "creation": "2024-12-09 15:36:57.013023",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "against_loan",
+  "applicant",
+  "customer_nae",
+  "column_break_3",
+  "company",
+  "posting_date",
+  "payment_details_section",
+  "amount",
+  "accounting_dimensions_section",
+  "cost_center",
+  "section_break_a5v1",
+  "pending_charges",
+  "column_break_g9f3",
+  "total_charges_payable",
+  "total_paid_charges",
+  "references_section",
+  "reference_number",
+  "column_break_21",
+  "reference_date",
+  "principal_amount_paid",
+  "total_penalty_paid",
+  "total_interest_paid",
+  "section_break_55wc",
+  "repayment_details",
+  "accounting_details_section",
+  "payment_account",
+  "penalty_income_account",
+  "column_break_36",
+  "loan_account",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "against_loan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Against Loan",
+   "options": "KSA Loan",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "against_loan.applicant",
+   "fieldname": "applicant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "against_loan.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "non_negative": 1,
+   "options": "Company:company:default_currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "section_break_a5v1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pending_charges",
+   "fieldtype": "Table",
+   "label": "Pending Charges",
+   "options": "Loan Charge Reference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_g9f3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_charges_payable",
+   "fieldtype": "Currency",
+   "label": "Total Charges Payable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_paid_charges",
+   "fieldtype": "Currency",
+   "label": "Total Paid Charges",
+   "read_only": 1
+  },
+  {
+   "fieldname": "references_section",
+   "fieldtype": "Section Break",
+   "label": "Payment References"
+  },
+  {
+   "fieldname": "reference_number",
+   "fieldtype": "Data",
+   "label": "Reference Number"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_date",
+   "fieldtype": "Date",
+   "label": "Reference Date"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "principal_amount_paid",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Principal Amount Paid",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_penalty_paid",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Penalty Paid",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_interest_paid",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Interest Paid",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_55wc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "repayment_details",
+   "fieldtype": "Table",
+   "label": "Repayment Details",
+   "options": "Loan Repayment Detail",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "KSA Loan Repayment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "accounting_details_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Details"
+  },
+  {
+   "fetch_from": "against_loan.payment_account",
+   "fetch_if_empty": 1,
+   "fieldname": "payment_account",
+   "fieldtype": "Link",
+   "label": "Repayment Account",
+   "options": "Account"
+  },
+  {
+   "fetch_from": "against_loan.penalty_income_account",
+   "fieldname": "penalty_income_account",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Penalty Income Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "against_loan.loan_account",
+   "fieldname": "loan_account",
+   "fieldtype": "Link",
+   "label": "Loan Account",
+   "options": "Account",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "KSA Loan Repayment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "against_loan.applicant",
+   "fieldname": "customer_nae",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Nae",
+   "options": "Customer",
+   "read_only": 1,
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-12-17 16:34:49.667009",
+ "modified_by": "Administrator",
+ "module": "Ksa Loan Management",
+ "name": "KSA Loan Repayment",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Loan Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

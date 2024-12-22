@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-12-09 16:53:57.814144",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "column_break_2",
+  "investor_id",
+  "contact_no",
+  "email_id",
+  "information_section",
+  "address",
+  "column_break_lrlw",
+  "other_infotrmation"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Investor Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "ACC-SH-.YYYY.-"
+  },
+  {
+   "fieldname": "investor_id",
+   "fieldtype": "Data",
+   "label": "Investor Id "
+  },
+  {
+   "default": "Saudi Arabia",
+   "fieldname": "contact_no",
+   "fieldtype": "Phone",
+   "label": "Contact No"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email Id"
+  },
+  {
+   "fieldname": "information_section",
+   "fieldtype": "Section Break",
+   "label": "Information"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_lrlw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other_infotrmation",
+   "fieldtype": "Small Text",
+   "label": "Other Infotrmation"
+  }
+ ],
+ "links": [],
+ "modified": "2024-12-17 16:45:45.563112",
+ "modified_by": "Administrator",
+ "module": "Ksa Loan Management",
+ "name": "Investor",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

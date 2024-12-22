@@ -1,0 +1,250 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "KSA-LOAN-.YYYY.-.#####",
+ "creation": "2024-12-09 15:36:12.650267",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "applicant_name",
+  "address",
+  "column_break_3",
+  "company",
+  "posting_date",
+  "employee",
+  "investor_name",
+  "section_break_8",
+  "loan_product",
+  "loan_amount",
+  "rate",
+  "interest_amount",
+  "full_loan_amount",
+  "column_break_11",
+  "repayment_method",
+  "repayment_periods",
+  "monthly_repayment_amount",
+  "repayment_start_date",
+  "account_info",
+  "cost_center",
+  "column_break_9",
+  "loan_repayment_schedule_tab",
+  "loan_repayment_schedule_section",
+  "repayment_details",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Investor",
+   "options": "Investor"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "applicant_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Applicant Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "no_copy": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Loan Details"
+  },
+  {
+   "fieldname": "loan_product",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Loan Product"
+  },
+  {
+   "fieldname": "loan_amount",
+   "fieldtype": "Currency",
+   "label": "Loan Amount",
+   "non_negative": 1,
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Repay Over Number of Periods",
+   "fieldname": "repayment_method",
+   "fieldtype": "Select",
+   "label": "Repayment Method",
+   "options": "\nRepay Fixed Amount per Period\nRepay Over Number of Periods"
+  },
+  {
+   "fieldname": "repayment_periods",
+   "fieldtype": "Int",
+   "label": "Repayment Period in Months"
+  },
+  {
+   "fetch_from": "loan_application.repayment_amount",
+   "fetch_if_empty": 1,
+   "fieldname": "monthly_repayment_amount",
+   "fieldtype": "Currency",
+   "label": "Monthly Repayment Amount",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "repayment_start_date",
+   "fieldtype": "Date",
+   "label": "Repayment Start Date"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "account_info",
+   "fieldtype": "Section Break",
+   "label": "Account Info"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "KSA Loan",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "loan_repayment_schedule_tab",
+   "fieldtype": "Tab Break",
+   "label": "Loan Repayment Schedule"
+  },
+  {
+   "fieldname": "loan_repayment_schedule_section",
+   "fieldtype": "Section Break",
+   "label": "Loan Repayment Schedule"
+  },
+  {
+   "fieldname": "repayment_details",
+   "fieldtype": "Table",
+   "label": "Repayment Details",
+   "options": "loan Schedules"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "KSA Loan",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "full_loan_amount",
+   "fieldtype": "Currency",
+   "label": "Full Loan Amount ",
+   "non_negative": 1,
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "employee.title",
+   "fieldname": "investor_name",
+   "fieldtype": "Data",
+   "label": "Investor Name"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "interest_amount",
+   "fieldtype": "Currency",
+   "label": "Interest Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-12-17 16:21:13.646251",
+ "modified_by": "Administrator",
+ "module": "Ksa Loan Management",
+ "name": "KSA Loan",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Loan Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Employee"
+  }
+ ],
+ "search_fields": "posting_date",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
